@@ -1,0 +1,14 @@
+inherit:
+    - linear_regression.yaml
+
+training:
+    tasks:
+        - name: linear_regression
+          kwargs: {normalize_w: True}
+        - name: linear_classification
+          kwargs: {}
+
+out_dir: ../gpt_final/linear_and_logistic_d=20
+
+wandb:
+    name: "linear_and_logistic_d=20"

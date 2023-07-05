@@ -1,0 +1,5 @@
+model:
+    family: EncoderTF
+    n_embd: 64
+    n_layer: 12
+    n_head: 8

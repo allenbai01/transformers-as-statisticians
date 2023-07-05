@@ -1,0 +1,22 @@
+inherit: 
+    - ../base.yaml
+
+model:
+    n_dims: 20
+
+training:
+    train_steps: 300001
+    tasks:
+        - name: linear_regression
+          kwargs: {normalize_w: True}
+    curriculum:
+        points:
+            start: 11
+            end: 41
+            inc: 2
+            interval: 2000
+
+out_dir: ../gpt_final/linear_regression
+
+wandb:
+    name: "linear_regression"

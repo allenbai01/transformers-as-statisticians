@@ -1,0 +1,22 @@
+inherit:
+    - linear_regression.yaml
+
+training:
+    train_steps: 300001
+    tasks:
+        - name: noisy_linear_regression
+          kwargs: {
+              normalize_w: True,
+              noise_std: 0.1
+          }
+    curriculum:
+        points:
+            start: 21
+            end: 21
+            inc: 2
+            interval: 2000
+
+out_dir: ../encoder_final/nlr_d=20_normalize_noise=0.1
+
+wandb:
+    name: "nlr_d=20_normalize_noise=0.1"

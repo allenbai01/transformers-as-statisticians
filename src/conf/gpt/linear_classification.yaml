@@ -1,0 +1,12 @@
+inherit:
+    - linear_regression.yaml
+
+training:
+    tasks:
+        - name: linear_classification
+          kwargs: {}
+
+out_dir: ../gpt_final/linear_classification
+
+wandb:
+    name: "linear_classification"

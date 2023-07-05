@@ -1,0 +1,15 @@
+inherit:
+    - ridge_0.1.yaml
+
+training:
+    tasks:
+        - name: noisy_linear_regression
+          kwargs: {
+              normalize_w: True,
+              noise_std: 0.5
+          }
+
+out_dir: ../gpt_final/nlr_d=20_normalize_noise=0.5
+
+wandb:
+    name: "nlr_d=20_normalize_noise=0.5"

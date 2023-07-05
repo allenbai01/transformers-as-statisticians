@@ -1,0 +1,27 @@
+inherit:
+    - linear_regression.yaml
+
+training:
+    train_steps: 2000001
+    learning_rate: 0.001
+    tasks:
+        - name: sparse_linear_regression
+          kwargs: {
+              sparsity: 3,
+              normalize_w: True
+          }
+    lasso_guided_opt: True
+    lasso_guided_opt_lam: 0.1
+    lasso_guided_opt_token: 5
+    lasso_guided_opt_layer: -2
+    curriculum:
+        points:
+            start: 11
+            end: 11
+            inc: 2
+            interval: 2000
+
+out_dir: ../encoder_final/slr_d=20_k=3_normalize_guided_lam_0.1_token_5_layer_-2
+
+wandb:
+    name: "slr_d=20_k=3_normalize_guided_lam_0.1_token_5_layer_-2"
